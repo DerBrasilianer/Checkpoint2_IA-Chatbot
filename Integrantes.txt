@@ -1,0 +1,32 @@
+RM 554770 - Amanda Santos Vasconcelos
+
+RM 557937 - Enzo Prado Soddano
+
+RM 558438 - Enzo Dias Alfaia Mendes
+
+
+Obs: Peço perdão pelo estado inacabado do bot. Eu não consegui utilizar bem as variáveis de contexto
+ou o TTS e STT, mas nós tentamos.
+
+
+Telegram:
+	
+- API Key:  7167693664:AAGXvVYb9Em6x-jF2fG4zjGbSXdheqnr32U
+- Nome: helpdeskmatriculas_bot
+
+Watson:
+
+- API Key: d3_y18D4Sn3eddot80AFWo_13pansaiXMypvxMAHU-k4
+- Service Endpoint: https://api.us-south.assistant.watson.cloud.ibm.com/instances/642c1578-5e4b-45ea-91bd-adeedeab6419
+- Assistant ID: b2ad6d22-337b-470f-843c-cfcf92b25fac
+- Assistant URL: https://api.us-south.assistant.watson.cloud.ibm.com/v2/assistants/b2ad6d22-337b-470f-843c-cfcf92b25fac/sessions
+
+Text to Speech: 
+
+- API Key: QVZBzHIpUFheH6UkXWonmh2n2-yw-IMgxJWZmJshYw0e
+- Service Endpoint: https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/97181119-4760-4c37-a724-94ce39d8e878
+
+Speech to Text:
+
+- API Key: XLwK3oP7bamqZMG-y3t6XHKI8ZSsXN94FIJmttmwdmI1
+- Service Endpoint: https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/86e34c27-7449-4cbe-8548-009cef6952ce

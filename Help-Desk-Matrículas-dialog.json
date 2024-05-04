@@ -1,0 +1,834 @@
+{
+  "intents": [
+    {
+      "intent": "Matrícula_Status",
+      "examples": [
+        {
+          "text": "A matrícula ainda está pendente?"
+        },
+        {
+          "text": "A matrícula está em andamento?"
+        },
+        {
+          "text": "Como anda a minha matrícula?"
+        },
+        {
+          "text": "Estou matriculado?"
+        },
+        {
+          "text": "Explique a matrícula."
+        },
+        {
+          "text": "Já concluí a matrícula?"
+        },
+        {
+          "text": "Já me matriculei?"
+        },
+        {
+          "text": "Minha matrícula está ok?"
+        },
+        {
+          "text": "Qual o status da minha matrícula?"
+        },
+        {
+          "text": "Quero ver o status da minha matrícula."
+        },
+        {
+          "text": "Status."
+        },
+        {
+          "text": "Status da matrícula"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Realizar_Matrícula",
+      "examples": [
+        {
+          "text": "55 11 95070-6496"
+        },
+        {
+          "text": "Cadastro."
+        },
+        {
+          "text": "Como eu faço para me matricular?"
+        },
+        {
+          "text": "Como posso me matricular?"
+        },
+        {
+          "text": "Desejo ingressar na universidade."
+        },
+        {
+          "text": "Enzo Completo"
+        },
+        {
+          "text": "Enzo prado"
+        },
+        {
+          "text": "enzosoddano1203@gmail.com"
+        },
+        {
+          "text": "Eu gostaria de realizar a matrícula, por favor."
+        },
+        {
+          "text": "Fazer matrícula."
+        },
+        {
+          "text": "Posso fazer a minha matrícula?"
+        },
+        {
+          "text": "Quero entrar na faculdade."
+        },
+        {
+          "text": "Quero matrícula!"
+        },
+        {
+          "text": "Quero me cadastrar."
+        },
+        {
+          "text": "Quero me matricular."
+        },
+        {
+          "text": "Quero me tornar um aluno."
+        },
+        {
+          "text": "Realizar cadastro."
+        },
+        {
+          "text": "Realizar minha matrícula."
+        },
+        {
+          "text": "Vocês têm vagas?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Saudações",
+      "examples": [
+        {
+          "text": "Alô."
+        },
+        {
+          "text": "Boa noite."
+        },
+        {
+          "text": "Boa tarde."
+        },
+        {
+          "text": "Bom dia."
+        },
+        {
+          "text": "Como vai?"
+        },
+        {
+          "text": "Oi."
+        },
+        {
+          "text": "Olá."
+        },
+        {
+          "text": "Opa."
+        },
+        {
+          "text": "Saudações."
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Tirar_Dúvidas",
+      "examples": [
+        {
+          "text": "Como posso retirar o diploma?"
+        },
+        {
+          "text": "Dúvidas"
+        },
+        {
+          "text": "Estou em dúvida."
+        },
+        {
+          "text": "Matrícula"
+        },
+        {
+          "text": "Não entendi algo."
+        },
+        {
+          "text": "Não sei onde buscar o diploma."
+        },
+        {
+          "text": "Pode me ajudar?"
+        },
+        {
+          "text": "Poderia me ajudar?"
+        },
+        {
+          "text": "Posso tirar uma dúvida?"
+        },
+        {
+          "text": "Preciso de ajuda."
+        },
+        {
+          "text": "Quero resolver uma dúvida."
+        },
+        {
+          "text": "Tenho uma dúvida."
+        },
+        {
+          "text": "Tenho uma dúvida sobre o diploma."
+        },
+        {
+          "text": "Tenho um problema."
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Email",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "Email",
+          "patterns": [
+            "^[\\w.-]+@[\\w.-]+.\\w{2,4}$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Nome",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "Nome",
+          "patterns": [
+            "^[A-ZÀ-Üa-zà-ü]{2,}\\s[A-ZÀ-Üa-zà-ü]{2,}(\\s[A-ZÀ-Üa-zà-ü]{2,})?$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Status_Matrícula",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Em andamento",
+          "synonyms": [
+            "Em processamento",
+            "Status"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ok",
+          "synonyms": [
+            "Okay"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Pendente",
+          "synonyms": [
+            "Não feita",
+            "Não realizada"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Telefone",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "Telefone de contato [DDI+DDD+Número]",
+          "patterns": [
+            "^+\\d{2}\\s\\d{2}\\s\\d{4,5}(-\\d{4})?$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Tipo_Dúvida",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Dúvida Diploma",
+          "synonyms": [
+            "Diploma",
+            "Diploma dúvida",
+            "Retirada de Diploma"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Dúvida Matrícula",
+          "synonyms": [
+            "Duvida de matrícula",
+            "Duvidas da matricula",
+            "Matricula",
+            "Matrícula",
+            "Matrícula Dúvida"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Tipo de dúvida",
+          "synonyms": [
+            "Dúvida"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá. Como posso te ajudar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome || #Saudações",
+      "dialog_node": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              },
+              {
+                "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+              },
+              {
+                "text": "Eu não entendi o sentido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "Bem-vindo",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1714715030812",
+      "context": {
+        "Email": "@Email:Email"
+      },
+      "conditions": "@Email:Email",
+      "event_name": "input",
+      "dialog_node": "handler_10_1714715030813"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_8_1714713554339",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1714713665821",
+      "previous_sibling": "node_7_1714716994720"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_8_1714717708054",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1714717708063",
+      "previous_sibling": "handler_6_1714717708063"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Para iniciar o processo de matrícula, preciso coletar algumas informações. Qual é o seu nome completo?"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_3_1714713666217",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1714713666225",
+      "previous_sibling": "handler_6_1714713666225"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_3_1714717570666",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1714717707643",
+      "previous_sibling": "node_1_1714717882981"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1714715032605",
+      "context": {
+        "Telefone": "@Telefone:(Telefone de contato [DDI+DDD+Número])"
+      },
+      "conditions": "@Telefone:(Telefone de contato [DDI+DDD+Número])",
+      "event_name": "input",
+      "dialog_node": "handler_3_1714715032606"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual é o seu Email?"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_7_1714715030812",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1714715030813",
+      "previous_sibling": "handler_10_1714715030813"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual é o seu telefone de contato [DDI+DDD+Nú-mero]?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_2_1714715032605",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1714715032606",
+      "previous_sibling": "handler_3_1714715032606"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1714713666217",
+      "context": {
+        "Nome": "@Nome:Nome"
+      },
+      "conditions": "@Nome:Nome",
+      "event_name": "input",
+      "dialog_node": "handler_6_1714713666225"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1714717708054",
+      "context": {
+        "Tipo_Duvida__Duvida": "@Tipo_Dúvida:(Dúvida Matrícula)"
+      },
+      "conditions": "@Tipo_Dúvida:(Dúvida Matrícula)",
+      "event_name": "input",
+      "dialog_node": "handler_6_1714717708063"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1714717751953",
+      "context": {
+        "Tipo_Duvida__Duvida": "@Tipo_Dúvida:(Dúvida Diploma)"
+      },
+      "conditions": "@Tipo_Dúvida:(Dúvida Diploma)",
+      "event_name": "input",
+      "dialog_node": "handler_6_1714717751954"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_7_1714717751953",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1714717751954",
+      "previous_sibling": "handler_6_1714717751954"
+    },
+    {
+      "type": "standard",
+      "title": "Dúvidas_Diploma",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O diploma será entregue no endereço providenciado à universidade dentro de 3-6 anos."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1714717570666",
+      "conditions": " @Tipo_Dúvida:(Dúvida Diploma)",
+      "dialog_node": "node_1_1714717882981",
+      "previous_sibling": "node_8_1714717870540"
+    },
+    {
+      "type": "standard",
+      "title": "Status_da_Matrícula",
+      "output": {
+        "generic": [
+          {
+            "title": "Você já realizou o processo de matrícula antes?",
+            "options": [
+              {
+                "label": "Sim",
+                "value": {
+                  "input": {
+                    "text": "Status Ok"
+                  }
+                }
+              },
+              {
+                "label": "Não",
+                "value": {
+                  "input": {
+                    "text": "Status Pendente"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "Bem-vindo",
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#Matrícula_Status || @Status_Matrícula",
+      "dialog_node": "node_3_1714716276414",
+      "previous_sibling": "node_8_1714713554339"
+    },
+    {
+      "type": "standard",
+      "title": "Matrícula_Realizada",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Matrícula realizada. Fique atento ao seu Email para não perder nosso contato."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1714716276414",
+      "conditions": "@Status_Matrícula:Ok",
+      "dialog_node": "node_3_1714716637724"
+    },
+    {
+      "type": "standard",
+      "title": "Tirar_Dúvidas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sobre o que você tem dúvidas? (Dúvida Matrícula / Retirada de Diploma)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bem-vindo",
+      "conditions": "#Tirar_Dúvidas",
+      "dialog_node": "node_3_1714717570666",
+      "previous_sibling": "node_3_1714716276414"
+    },
+    {
+      "type": "standard",
+      "title": "Matrícula_Pendente",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Matrícula pendente. Você tem até o dia 3/5 para realizar a matrícula."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1714716276414",
+      "conditions": "@Status_Matrícula:Pendente",
+      "dialog_node": "node_4_1714716655116",
+      "previous_sibling": "node_3_1714716637724"
+    },
+    {
+      "type": "standard",
+      "title": "Matrícula_em_Andamento",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Matrícula em andamento."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1714713554339",
+      "conditions": "#Matrícula_Status || @Status_Matrícula:(Em andamento)",
+      "dialog_node": "node_7_1714716994720",
+      "previous_sibling": "response_1_1714721048790"
+    },
+    {
+      "type": "frame",
+      "title": "Matrícula",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Obrigado pelas informações. Vou processar sua solicitação de matrícula e entrarei em contato em breve para informar o status da sua matrícula. \n\nConfira seus dados:\n\nNome: $Nome\nEmail: $Email\nTelefone: $Telefone"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bem-vindo",
+      "context": {
+        "Nome": "@Nome.literal",
+        "Email": "@Email.literal",
+        "Telefone": "@Telefone.literal"
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#Realizar_Matrícula",
+      "dialog_node": "node_8_1714713554339"
+    },
+    {
+      "type": "standard",
+      "title": "Dúvidas_Matrículas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Após realizar a matrícula, o aluno deverá providenciar a universidade com uma cópia de todos os documentos, como pedidos no site oficial."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1714717570666",
+      "conditions": " @Tipo_Dúvida:(Dúvida Matrícula)",
+      "dialog_node": "node_8_1714717870540"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Obrigado pelas informações. Vou processar sua solicitação de matrícula e entrarei em contato em breve para informar o status da sua matrícula. \n\n$MeuNome\n$MeuEmail\n$MeuTelefone"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1714713554339",
+      "disabled": true,
+      "conditions": "$MeuNome",
+      "dialog_node": "response_1_1714721048790"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "Você já realizou o processo de matrícula antes?",
+            "options": [
+              {
+                "label": "Sim",
+                "value": {
+                  "input": {
+                    "text": "Status Ok"
+                  }
+                }
+              },
+              {
+                "label": "Não",
+                "value": {
+                  "input": {
+                    "text": "Status Pendente"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_3_1714716276414",
+      "disabled": true,
+      "conditions": "@Status_Matrícula:()",
+      "dialog_node": "response_5_1714716468973",
+      "previous_sibling": "node_4_1714716655116"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1714716276414",
+      "disabled": true,
+      "dialog_node": "response_7_1714718875954",
+      "previous_sibling": "response_5_1714716468973"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_8_1714713554339",
+      "variable": "Telefone",
+      "dialog_node": "slot_2_1714715032605",
+      "previous_sibling": "slot_7_1714715030812"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1714713554339",
+      "variable": "Nome",
+      "dialog_node": "slot_3_1714713666217",
+      "previous_sibling": "handler_1_1714713665821"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1714713554339",
+      "variable": "Email",
+      "dialog_node": "slot_7_1714715030812",
+      "previous_sibling": "slot_3_1714713666217"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1714717570666",
+      "variable": "$Tipo_Duvida__Duvida",
+      "dialog_node": "slot_7_1714717751953",
+      "previous_sibling": "slot_8_1714717708054"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1714717570666",
+      "variable": "$Tipo_Duvida__Duvida",
+      "dialog_node": "slot_8_1714717708054",
+      "previous_sibling": "handler_2_1714717707643"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Você quis dizer:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma das anteriores",
+      "use_connect_to_support_prompt": "Connect to support",
+      "single_answer_clarification_prompt": "Something else"
+    },
+    "human_agent_assist": {
+      "prompt": "Você quis dizer:"
+    }
+  },
+  "learning_opt_out": false,
+  "language": "pt-br",
+  "description": "Atendimento relacionado à realização de matrículas e esclarecimento de dúvidas.",
+  "name": "Help Desk Matrículas-dialog"
+}
